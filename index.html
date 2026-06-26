@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1F2A" />
+  <title>Duo Finance — Talk the Money Talk</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ===== HOME / MAP ===== -->
+    <section id="screen-home" class="screen active">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">D$</span>
+          <div>
+            <h1>Duo Finance</h1>
+            <p class="tagline">Talk the money talk.</p>
+          </div>
+        </div>
+        <div class="streak" id="streakChip" title="Day streak">
+          <span class="flame">▲</span><span id="streakCount">0</span>
+        </div>
+      </header>
+
+      <div class="stats-row">
+        <div class="stat"><span class="stat-num" id="xpTotal">0</span><span class="stat-label">XP</span></div>
+        <div class="stat"><span class="stat-num" id="lessonsDone">0</span><span class="stat-label">Lessons</span></div>
+        <div class="stat"><span class="stat-num" id="termsLearned">0</span><span class="stat-label">Terms</span></div>
+      </div>
+
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-track="market">Market English</button>
+        <button class="tab" data-track="finra">FINRA Prep</button>
+      </nav>
+
+      <div id="unitList" class="unit-list"></div>
+
+      <footer class="home-foot">
+        <button id="voiceCheckBtn" class="ghost-btn">Check my mic &amp; voice</button>
+        <p class="micro" id="footNote">100% free · works offline · no account needed</p>
+      </footer>
+    </section>
+
+    <!-- ===== LESSON ===== -->
+    <section id="screen-lesson" class="screen">
+      <header class="lesson-bar">
+        <button id="quitLesson" class="icon-btn" aria-label="Close lesson">✕</button>
+        <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+        <div class="hearts" id="hearts"></div>
+      </header>
+      <div id="cardHost" class="card-host"></div>
+      <footer class="lesson-foot">
+        <div id="feedback" class="feedback"></div>
+        <button id="primaryBtn" class="primary-btn" disabled>Check</button>
+      </footer>
+    </section>
+
+    <!-- ===== DONE ===== -->
+    <section id="screen-done" class="screen">
+      <div class="done-wrap">
+        <div class="done-badge">✓</div>
+        <h2>Lesson cleared</h2>
+        <p id="doneSummary" class="done-sum"></p>
+        <button id="backHome" class="primary-btn">Back to map</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
